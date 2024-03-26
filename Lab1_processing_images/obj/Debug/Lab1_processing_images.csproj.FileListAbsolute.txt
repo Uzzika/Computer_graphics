@@ -1,0 +1,22 @@
+C:\Users\79200\source\Lab1_processing_images\bin\Debug\Lab1_processing_images.exe.config
+C:\Users\79200\source\Lab1_processing_images\bin\Debug\Lab1_processing_images.exe
+C:\Users\79200\source\Lab1_processing_images\bin\Debug\Lab1_processing_images.pdb
+C:\Users\79200\source\Lab1_processing_images\obj\Debug\Lab1_processing_images.csproj.AssemblyReference.cache
+C:\Users\79200\source\Lab1_processing_images\obj\Debug\Lab1_processing_images.csproj.SuggestedBindingRedirects.cache
+C:\Users\79200\source\Lab1_processing_images\obj\Debug\Lab1_processing_images.Form1.resources
+C:\Users\79200\source\Lab1_processing_images\obj\Debug\Lab1_processing_images.Properties.Resources.resources
+C:\Users\79200\source\Lab1_processing_images\obj\Debug\Lab1_processing_images.csproj.GenerateResource.cache
+C:\Users\79200\source\Lab1_processing_images\obj\Debug\Lab1_processing_images.csproj.CoreCompileInputs.cache
+C:\Users\79200\source\Lab1_processing_images\obj\Debug\Lab1_processing_images.exe
+C:\Users\79200\source\Lab1_processing_images\obj\Debug\Lab1_processing_images.pdb
+C:\Users\79200\source\Computer graphics\Lab1_processing_images\bin\Debug\Lab1_processing_images.exe.config
+C:\Users\79200\source\Computer graphics\Lab1_processing_images\bin\Debug\Lab1_processing_images.exe
+C:\Users\79200\source\Computer graphics\Lab1_processing_images\bin\Debug\Lab1_processing_images.pdb
+C:\Users\79200\source\Computer graphics\Lab1_processing_images\obj\Debug\Lab1_processing_images.csproj.AssemblyReference.cache
+C:\Users\79200\source\Computer graphics\Lab1_processing_images\obj\Debug\Lab1_processing_images.csproj.SuggestedBindingRedirects.cache
+C:\Users\79200\source\Computer graphics\Lab1_processing_images\obj\Debug\Lab1_processing_images.Form1.resources
+C:\Users\79200\source\Computer graphics\Lab1_processing_images\obj\Debug\Lab1_processing_images.Properties.Resources.resources
+C:\Users\79200\source\Computer graphics\Lab1_processing_images\obj\Debug\Lab1_processing_images.csproj.GenerateResource.cache
+C:\Users\79200\source\Computer graphics\Lab1_processing_images\obj\Debug\Lab1_processing_images.csproj.CoreCompileInputs.cache
+C:\Users\79200\source\Computer graphics\Lab1_processing_images\obj\Debug\Lab1_processing_images.exe
+C:\Users\79200\source\Computer graphics\Lab1_processing_images\obj\Debug\Lab1_processing_images.pdb
