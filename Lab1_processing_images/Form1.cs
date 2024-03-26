@@ -80,5 +80,17 @@ namespace Lab1_processing_images
             GrayScaleFilter filter = new GrayScaleFilter();
             backgroundWorker1.RunWorkerAsync(filter);
         }
+
+        private void сепияToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SepiaFilter filter = new SepiaFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void повыситьЯркостьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BrightFilter filter = new BrightFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
     }
 }

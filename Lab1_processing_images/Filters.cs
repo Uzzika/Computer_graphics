@@ -132,4 +132,35 @@ namespace Lab1_processing_images
             return resultColor;
         }
     }
+
+    class SepiaFilter : Filters
+    {
+        protected override Color calculateNewPixelColor(Bitmap sourceImage, int x, int y)
+        {
+            Color sourceColor = sourceImage.GetPixel(x, y);
+            int intensity = (int)((float)(0.299 * sourceColor.R + 0.587 * sourceColor.G + 0.114 * sourceColor.B));
+            double resultR = intensity + 2 * 20;
+            double resultG = intensity + (0.5 * 20);
+            double resultB = intensity - 1 * 20;
+            return Color.FromArgb(
+                Clamp((int)resultR, 0, 255),
+                Clamp((int)resultG, 0, 255),
+                Clamp((int)resultB, 0, 255));
+        }
+    }
+
+    class BrightFilter : Filters
+    {
+        protected override Color calculateNewPixelColor(Bitmap sourceImage, int x, int y)
+        {
+            Color sourceColor = sourceImage.GetPixel(x, y);
+            double resultR = sourceColor.R + 80;
+            double resultG = sourceColor.G + 80;
+            double resultB = sourceColor.B + 80;
+            return Color.FromArgb(
+                Clamp((int)resultR, 0, 255),
+                Clamp((int)resultG, 0, 255),
+                Clamp((int)resultB, 0, 255));
+        }
+    }
 }
