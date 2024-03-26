@@ -74,5 +74,11 @@ namespace Lab1_processing_images
             GaussianFilter filter = new GaussianFilter();
             backgroundWorker1.RunWorkerAsync(filter);
         }
+
+        private void grayScaleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GrayScaleFilter filter = new GrayScaleFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
     }
 }
