@@ -62,5 +62,17 @@ namespace Lab1_processing_images
         {
             backgroundWorker1.CancelAsync();
         }
+
+        private void размытиеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BlurFilter filter = new BlurFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void гауссToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GaussianFilter filter = new GaussianFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
     }
 }
