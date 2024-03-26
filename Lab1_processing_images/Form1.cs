@@ -92,5 +92,17 @@ namespace Lab1_processing_images
             BrightFilter filter = new BrightFilter();
             backgroundWorker1.RunWorkerAsync(filter);
         }
+
+        private void собеляToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SobelFilter filter = new SobelFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void резкостьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SharpnessFilter filter = new SharpnessFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
     }
 }

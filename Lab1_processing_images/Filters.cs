@@ -105,7 +105,7 @@ namespace Lab1_processing_images
             float norm = 0;
             for (int i = -radius; i <= radius; i++)
             {
-                for (int j = -radius; j <=radius; j++)
+                for (int j = -radius; j <= radius; j++)
                 {
                     kernel[i + radius, j + radius] = (float)(Math.Exp(-(i * i + j * j) / (2 * sigma * sigma)));
                     norm += kernel[i + radius, j + radius];
@@ -119,7 +119,7 @@ namespace Lab1_processing_images
                 }
             }
         }
-        public GaussianFilter() { createGaussianKernel (3, 2); }
+        public GaussianFilter() { createGaussianKernel(3, 2); }
     }
 
     class GrayScaleFilter : Filters
@@ -161,6 +161,66 @@ namespace Lab1_processing_images
                 Clamp((int)resultR, 0, 255),
                 Clamp((int)resultG, 0, 255),
                 Clamp((int)resultB, 0, 255));
+        }
+    }
+    class SobelFilter : MatrixFilter
+    {
+        private float[,] kernelX = {
+        { -1, 0, 1 },
+        { -2, 0, 2 },
+        { -1, 0, 1 }
+    };
+
+        private float[,] kernelY = {
+        { -1, -2, -1 },
+        { 0, 0, 0 },
+        { 1, 2, 1 }
+    };
+        protected override Color calculateNewPixelColor(Bitmap sourceImage, int x, int y)
+        {
+            float gradientX = CalculateGradient(sourceImage, x, y, kernelX);
+            float gradientY = CalculateGradient(sourceImage, x, y, kernelY);
+
+            // Calculate gradient magnitude
+            float magnitude = (float)Math.Sqrt(gradientX * gradientX + gradientY * gradientY);
+
+            // Clamp and return the color based on magnitude
+            int intensity = Clamp((int)magnitude, 0, 255);
+            return Color.FromArgb(intensity, intensity, intensity);
+        }
+
+        private float CalculateGradient(Bitmap sourceImage, int x, int y, float[,] kernel)
+        {
+            int radiusX = kernel.GetLength(0) / 2;
+            int radiusY = kernel.GetLength(1) / 2;
+            float result = 0;
+
+            for (int l = -radiusY; l <= radiusY; l++)
+            {
+                for (int k = -radiusX; k <= radiusX; k++)
+                {
+                    int idX = Clamp(x + k, 0, sourceImage.Width - 1);
+                    int idY = Clamp(y + l, 0, sourceImage.Height - 1);
+                    Color neighborColor = sourceImage.GetPixel(idX, idY);
+                    float grayValue = (float)(0.299 * neighborColor.R + 0.587 * neighborColor.G + 0.114 * neighborColor.B);
+                    result += grayValue * kernel[k + radiusX, l + radiusY];
+                }
+            }
+
+            return result;
+        }
+    }
+
+    class SharpnessFilter : MatrixFilter
+    {
+        public SharpnessFilter()
+        {
+            kernel = new float[,]
+            {
+                { 0, -1, 0 },
+                { -1, 5, -1 },
+                { 0, -1, 0 }
+            };
         }
     }
 }
