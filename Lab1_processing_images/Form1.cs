@@ -104,5 +104,53 @@ namespace Lab1_processing_images
             SharpnessFilter filter = new SharpnessFilter();
             backgroundWorker1.RunWorkerAsync(filter);
         }
+
+        private void тиснениеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EmbossingFilter filter = new EmbossingFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void motionBlurToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MotionBlurFilter filter = new MotionBlurFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void щарраToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SharraFilter filter = new SharraFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void прюиттаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PruitFilter filter = new PruitFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void переносToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TransferFilter filter = new TransferFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void поворотToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TurnFilter filter = new TurnFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void волныВертикальныеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WaveFilterVertical filter = new WaveFilterVertical();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void волныГоризонтальныеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WaveFilterHorizontal filter = new WaveFilterHorizontal();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
     }
 }
