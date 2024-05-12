@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Drawing;
 using System.Windows.Forms.VisualStyles;
 using System.ComponentModel;
+using System.Security.Cryptography;
+using System.Windows.Forms;
 
 namespace Lab1_processing_images
 {
@@ -138,6 +140,19 @@ namespace Lab1_processing_images
             Color resultColor = sourceImage.GetPixel(idI, idJ);
             return resultColor;
         }
+    }
+
+    class StripesAndInversion : Filters
+    {
+        protected override Color calculateNewPixelColor(Bitmap sourceImage, int i, int j)
+        {
+
+            int idJ = Clamp(j, 0, sourceImage.Height - 1);
+            if (idJ == sourceImage.Height - 1) { return Color.FromArgb(0, 0, 0); }
+            Color resultColor = sourceImage.GetPixel(sourceImage.Width, idJ);
+            return resultColor;
+        }
+
     }
 
     class MatrixFilter : Filters
