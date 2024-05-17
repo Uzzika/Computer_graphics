@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34902.65
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab2_Dudchenko_tomogram_visualizer", "Lab2_Dudchenko_tomogram_visualizer\Lab2_Dudchenko_tomogram_visualizer.csproj", "{661A9DC0-A664-4A51-99F1-BDADD5535DBC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{661A9DC0-A664-4A51-99F1-BDADD5535DBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{661A9DC0-A664-4A51-99F1-BDADD5535DBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{661A9DC0-A664-4A51-99F1-BDADD5535DBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{661A9DC0-A664-4A51-99F1-BDADD5535DBC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7646AD46-131F-4664-AC7D-C7E15DAC62A1}
+	EndGlobalSection
+EndGlobal
