@@ -20,8 +20,8 @@ namespace Lab2_Dudchenko_tomogram_visualizer
         }
         enum Mode { Quads, Texture2D, QuadStrip };
         private Mode mode = Mode.Quads;
-        private Bin bin = new Bin();
-        private View view = new View();
+        private Bin bin;
+        private View view;
         private bool loaded = false;
         private int currentLayer;
         private DateTime NextFPSUpdate = DateTime.Now.AddSeconds(1);
@@ -30,6 +30,17 @@ namespace Lab2_Dudchenko_tomogram_visualizer
 
         private int min;
         private int width;
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Application.Idle += Application_Idle;
+            bin = new Bin();
+            view = new View();
+            currentLayer = 1;
+            min = trackBar2.Value;
+            width = trackBar3.Value;
+            radioButton1.Checked = true;
+        }
 
         private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -96,11 +107,6 @@ namespace Lab2_Dudchenko_tomogram_visualizer
                 displayFPS();
                 glControl1.Invalidate();
             }
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            Application.Idle += Application_Idle;
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)

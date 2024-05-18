@@ -14,6 +14,9 @@ namespace Lab2_Dudchenko_tomogram_visualizer
     {
         Bitmap textureImage;
         int VBOtexture;
+
+        public int min = 0;
+        public int max = 2000;
         public void Load2DTexture()
         {
             GL.BindTexture(TextureTarget.Texture2D, VBOtexture);
@@ -82,16 +85,16 @@ namespace Lab2_Dudchenko_tomogram_visualizer
             GL.Ortho(0, Bin.X, 0, Bin.Y, -1, 1);
             GL.Viewport(0, 0, width, height);
         }
-        Color TransferFunction(int value, int min, int width)
+        Color TransferFunction(short value, int min, int width)
         {
-            int max = min + width;
-            int newVal = clamp((value - min) * 255 / (max - min), 0, 255);
-            return Color.FromArgb(newVal, newVal, newVal);
+            if (min != 0 && width != 0) { int max = min + width; }
+            int newVal = clamp((value - min) * 255 /(max - min), 0, 255);
+            return Color.FromArgb(255, newVal, newVal, newVal);
         }
 
         public void DrawQuads(int layerNamber, int min, int width)
         {
-            GL.Clear((ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit));
+            GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
             GL.Begin(BeginMode.Quads);
             for (int x_coord = 0; x_coord < Bin.X - 1; x_coord++)
                 for (int y_coord = 0; y_coord < Bin.Y - 1; y_coord++)
