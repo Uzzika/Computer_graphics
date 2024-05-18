@@ -18,19 +18,14 @@ namespace Lab2_Dudchenko_tomogram_visualizer
         {
             InitializeComponent();
         }
-        //void Application_Idle(object sender, EventArgs e)
-        //{
-        //    while (glControl1.IsIdle)
-        //    {
-        //        displayFPS();
-        //        glControl1.Invalidate();
-        //    }
-        //}
 
         private Bin bin = new Bin();
         private View view = new View();
         private bool loaded = false;
         private int currentLayer;
+        private bool needReload = false;
+        int FrameCount;
+        DateTime NextFPSUpdate = DateTime.Now.AddSeconds(1);
 
         private int min;
         private int width;
@@ -42,6 +37,7 @@ namespace Lab2_Dudchenko_tomogram_visualizer
             {
                 string str = dialog.FileName;
                 bin.readBIN(str);
+                trackBar1.Maximum = Bin.Z - 1;
                 view.SetupView(glControl1.Width, glControl1.Height);
                 loaded = true;
                 glControl1.Invalidate();
@@ -55,6 +51,36 @@ namespace Lab2_Dudchenko_tomogram_visualizer
                 view.DrawQuads(currentLayer);
                 glControl1.SwapBuffers();
             }
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            currentLayer = trackBar1.Value;
+            needReload = true;
+        }
+        void displayFPS()
+        {
+            if (DateTime.Now >= NextFPSUpdate)
+            {
+                this.Text = String.Format("CT Visualaiser (fps={0})", FrameCount);
+                NextFPSUpdate = DateTime.Now.AddSeconds(1);
+                FrameCount = 0;
+            }
+            FrameCount++;
+        }
+
+        void Application_Idle(object sender, EventArgs e)
+        {
+            while (glControl1.IsIdle)
+            {
+                displayFPS();
+                glControl1.Invalidate();
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Application.Idle += Application_Idle;
         }
     }
 }
