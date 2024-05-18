@@ -18,14 +18,15 @@ namespace Lab2_Dudchenko_tomogram_visualizer
         {
             InitializeComponent();
         }
-
+        enum Mode { Quads, Texture2D, QuadStrip };
+        private Mode mode = Mode.Quads;
         private Bin bin = new Bin();
         private View view = new View();
         private bool loaded = false;
         private int currentLayer;
+        private DateTime NextFPSUpdate = DateTime.Now.AddSeconds(1);
+        private int FrameCount;
         private bool needReload = false;
-        int FrameCount;
-        DateTime NextFPSUpdate = DateTime.Now.AddSeconds(1);
 
         private int min;
         private int width;
@@ -48,8 +49,27 @@ namespace Lab2_Dudchenko_tomogram_visualizer
         {
             if (loaded)
             {
-                view.DrawQuads(currentLayer);
-                glControl1.SwapBuffers();
+                switch (mode)
+                {
+                    case Mode.Quads:
+                        view.DrawQuads(currentLayer, min, width);
+                        glControl1.SwapBuffers();
+                        break;
+                    case Mode.Texture2D:
+                        if (needReload)
+                        {
+                            view.generateTextureImage(currentLayer, min, width);
+                            view.Load2DTexture();
+                            needReload = false;
+                        }
+                        view.DrawTexture();
+                        glControl1.SwapBuffers();
+                        break;
+                    case Mode.QuadStrip:
+                        view.DrawQuadStrip(currentLayer, min, width);
+                        glControl1.SwapBuffers();
+                        break;
+                }
             }
         }
 
@@ -81,6 +101,33 @@ namespace Lab2_Dudchenko_tomogram_visualizer
         private void Form1_Load(object sender, EventArgs e)
         {
             Application.Idle += Application_Idle;
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            mode = Mode.Quads;
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            mode = Mode.Texture2D;
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            mode = Mode.QuadStrip;
+        }
+
+        private void trackBar2_Scroll(object sender, EventArgs e)
+        {
+            min = trackBar2.Value;
+            needReload = true;
+        }
+
+        private void trackBar3_Scroll(object sender, EventArgs e)
+        {
+            width = trackBar3.Value;
+            needReload = true;
         }
     }
 }
