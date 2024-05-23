@@ -1,0 +1,17 @@
+C:\Users\79200\source\Computer_graphics\Lab3_ray_tracing\Lab3_ray_tracing\bin\Debug\Lab3_ray_tracing.exe.config
+C:\Users\79200\source\Computer_graphics\Lab3_ray_tracing\Lab3_ray_tracing\bin\Debug\Lab3_ray_tracing.exe
+C:\Users\79200\source\Computer_graphics\Lab3_ray_tracing\Lab3_ray_tracing\bin\Debug\Lab3_ray_tracing.pdb
+C:\Users\79200\source\Computer_graphics\Lab3_ray_tracing\Lab3_ray_tracing\bin\Debug\OpenTK.dll
+C:\Users\79200\source\Computer_graphics\Lab3_ray_tracing\Lab3_ray_tracing\bin\Debug\OpenTK.GLControl.dll
+C:\Users\79200\source\Computer_graphics\Lab3_ray_tracing\Lab3_ray_tracing\bin\Debug\OpenTK.pdb
+C:\Users\79200\source\Computer_graphics\Lab3_ray_tracing\Lab3_ray_tracing\bin\Debug\OpenTK.xml
+C:\Users\79200\source\Computer_graphics\Lab3_ray_tracing\Lab3_ray_tracing\bin\Debug\OpenTK.dll.config
+C:\Users\79200\source\Computer_graphics\Lab3_ray_tracing\Lab3_ray_tracing\bin\Debug\OpenTK.GLControl.xml
+C:\Users\79200\source\Computer_graphics\Lab3_ray_tracing\Lab3_ray_tracing\obj\Debug\Lab3_ray_tracing.csproj.AssemblyReference.cache
+C:\Users\79200\source\Computer_graphics\Lab3_ray_tracing\Lab3_ray_tracing\obj\Debug\Lab3_ray_tracing.Form1.resources
+C:\Users\79200\source\Computer_graphics\Lab3_ray_tracing\Lab3_ray_tracing\obj\Debug\Lab3_ray_tracing.Properties.Resources.resources
+C:\Users\79200\source\Computer_graphics\Lab3_ray_tracing\Lab3_ray_tracing\obj\Debug\Lab3_ray_tracing.csproj.GenerateResource.cache
+C:\Users\79200\source\Computer_graphics\Lab3_ray_tracing\Lab3_ray_tracing\obj\Debug\Lab3_ray_tracing.csproj.CoreCompileInputs.cache
+C:\Users\79200\source\Computer_graphics\Lab3_ray_tracing\Lab3_ray_tracing\obj\Debug\Lab3_ray.913B689E.Up2Date
+C:\Users\79200\source\Computer_graphics\Lab3_ray_tracing\Lab3_ray_tracing\obj\Debug\Lab3_ray_tracing.exe
+C:\Users\79200\source\Computer_graphics\Lab3_ray_tracing\Lab3_ray_tracing\obj\Debug\Lab3_ray_tracing.pdb
